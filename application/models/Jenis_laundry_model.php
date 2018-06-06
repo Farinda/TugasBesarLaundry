@@ -13,6 +13,18 @@ class Jenis_laundry_model extends CI_Model {
 	}
 	public function insert()
 	{
-		$data = $this->
+		$data = $this->input->post();
+		$this->db->insert('jenis_laundry',$data);
+	}
+	public function update($id)
+	{
+		$data = $this->input->post();
+		$this->db->where('id_jenis_laundry',$id);
+		$this->db->update('jenis_laundry',$data);
+	}
+	public function delete($id)
+	{
+		$this->db->where('id_jenis_laundry',$id);
+		$this->db->delete('jenis_laundry');
 	}
 }

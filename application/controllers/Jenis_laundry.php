@@ -3,8 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jenis_laundry extends CI_Controller {
 
-	function __construct()
+	public function __construct()
 	{
+		parent::__construct();
 		$this->load->model('Jenis_laundry_model');
 	}
 	public function index()
@@ -21,6 +22,7 @@ class Jenis_laundry extends CI_Controller {
 			$this->load->view('jenis_laundry/input');
 		}
 	}
+	
 	public function update($id)
 	{
 		$data['old_data'] = $this->Jenis_laundry_model->get_data_id($id);
